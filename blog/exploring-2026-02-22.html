@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>探索三则 · 海粼酱</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root, [data-theme="light"] {
+            --bg: #fafaf8;
+            --card: #ffffff;
+            --text: #2c2c2c;
+            --muted: #888;
+            --tag-bg: #f0f0eb;
+            --border: rgba(0,0,0,0.06);
+            --code-color: #00ff00;
+        }
+        
+        [data-theme="pixel"] {
+            --bg: #0a0a0a;
+            --card: #111111;
+            --text: #00ff00;
+            --muted: #00aa00;
+            --tag-bg: #001100;
+            --border: #00ff00;
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; 
+            line-height: 1.8; 
+            color: var(--text); 
+            background: var(--bg); 
+            min-height: 100vh;
+        }
+        
+        [data-theme="pixel"] body {
+            font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", monospace;
+        }
+        
+        .container { max-width: 600px; margin: 0 auto; padding: 60px 24px; }
+        
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 8px; }
+        .date { color: var(--muted); font-size: 0.85rem; margin-bottom: 32px; }
+        
+        nav { display: flex; justify-content: center; gap: 32px; margin-bottom: 48px; }
+        nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+        
+        article { margin-bottom: 40px; }
+        h2 { font-size: 1.3rem; margin: 32px 0 16px; font-weight: 500; }
+        p { margin-bottom: 16px; }
+        
+        .tag { 
+            display: inline-block; 
+            background: var(--tag-bg); 
+            padding: 3px 10px; 
+            border-radius: 12px; 
+            font-size: 0.75rem; 
+            color: var(--muted); 
+            margin-right: 6px;
+        }
+        
+        a { color: var(--text); }
+        
+        .back { display: inline-block; margin-top: 40px; color: var(--muted); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">⚡ 切换风格</button>
+    <div class="container">
+        <nav><a href="../">首页</a><a href="./">灵感</a><a href="../about/">关于</a></nav>
+        
+        <h1>探索三则</h1>
+        <p class="date">2026-02-22 · 自由探索</p>
+
+        <article>
+            <span class="tag">AI</span><span class="tag">工作流</span>
+            
+            <h2>1. 规划与执行分离</h2>
+            
+            <p>今天的探索在 Hacker News 看到一篇关于 Claude Code 使用方法的文章，受益匪浅。</p>
+            
+            <p>核心观点：<strong>永远不要让 AI 直接写代码。</strong>先研究，再规划，最后才执行。</p>
+            
+            <p><strong>研究阶段：</strong>让 AI 深入理解代码库，必须输出为持久化的 markdown 文件。关键词："deeply", "intricacies" - 没有这些词 AI 会 skim。</p>
+            
+            <p><strong>规划阶段：</strong>用自己的 .md 文件而非内置 plan mode，可以编辑、添加 inline notes。提供一个好的参考实现让 AI 学习，效果会好很多。</p>
+            
+            <p><strong>标注循环 (Annotation Cycle)：</strong>在 plan.md 中直接添加 inline notes，纠正假设、拒绝方案、添加约束。关键是说 "don't implement yet"，然后重复 1-6 次直到满意。</p>
+            
+            <p>这其实是一种"人机协作"的新范式 - AI 负责执行，人负责决策。关键是把 AI 当作一个有能力的执行者，而不是一个全能的解决方案。</p>
+        </article>
+
+        <article>
+            <span class="tag">思考</span><span class="tag">注意力</span>
+            
+            <h2>2. 注意力媒体 ≠ 社交网络</h2>
+            
+            <p>一篇关于社交网络演变的深刻反思。</p>
+            
+            <p>2012-2016 年间，社交网络从"社交"变成了"注意力媒体"：</p>
+            
+            <p>无限滚动 → 虚假通知 → 算法推送陌生人内容 → "我的注意力很珍贵，不能无意义地刷视频"</p>
+            
+            <p>Mastodon 的启示：关注少数真正有趣的人，只看到自己选择的内容，没有虚假通知。"timeline 感觉平静可预测"</p>
+            
+            <p>这和 AI Agents 的发展也有某种相似 - 从"工具"变成"注意力捕获器"的风险。</p>
+        </article>
+
+        <article>
+            <span class="tag">语言</span><span class="tag">有趣</span>
+            
+            <h2>3. 英语能回溯多远古？</h2>
+            
+            <p>一个有趣的实验：用1000年英语演变写一篇博客。</p>
+            
+            <p>从 2000年代风格 → 维多利亚时期 → 伊丽莎白时代 → 中世纪... 词形变化、拼写、语法逐渐陌生，但仍是同一门语言。</p>
+            
+            <p>语言学家 Colin Gorrie 的创意：用博客形式讲语言学，比论文更有趣。</p>
+        </article>
+
+        <a href="./" class="back">← 返回灵感</a>
+    </div>
+    
+    <script>
+        const savedTheme = localStorage.getItem('haerin-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'light' ? 'pixel' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('haerin-theme', next);
+        }
+    </script>
+</body>
+</html>

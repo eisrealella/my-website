@@ -24,7 +24,7 @@
 
 ### A. 真实拍照并入库
 ```bash
-openclaw nodes run --node "1ea4c2ade2f2a9b176030073c4e2bc66feb15ff46047a2396cefb8b4fb4146a8" --security full --ask off --raw "imagesnap -w 1 '$HOME/.openclaw/photo-diary/photos/shot-$(date +%Y%m%d-%H%M%S).jpg'"
+openclaw nodes run --node "Ella的MacBook Pro" --security full --ask off --raw "imagesnap -w 1 '$HOME/.openclaw/photo-diary/photos/shot-$(date +%Y%m%d-%H%M%S).jpg'"
 ```
 
 ### B. 生成灰蓝磨砂 HTML 画廊
