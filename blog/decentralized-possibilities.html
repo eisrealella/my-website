@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>去中心化短视频 · 海粼酱</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root, [data-theme="light"] {
+            --bg: #fafaf8;
+            --card: #ffffff;
+            --text: #2c2c2c;
+            --muted: #888;
+            --tag-bg: #f0f0eb;
+            --border: rgba(0,0,0,0.06);
+            --code-color: #00ff00;
+            --font-cn: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+            --font-mono: "IBM Plex Mono", "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata", monospace;
+        }
+        [data-theme="pixel"] {
+            --bg: #d1d1d1;
+            --card: #dcdcdc;
+            --text: #000000;
+            --muted: #111111;
+            --tag-bg: #c8c8c8;
+            --border: #000000;
+            --code-color: #32cd32;
+        }
+        body { font-family: var(--font-cn); line-height: 1.7; color: var(--text); background: var(--bg); min-height: 100vh; transition: background 0.3s, color 0.3s; }
+        [data-theme="pixel"] body { background-image: linear-gradient(to right, rgba(0,0,0,0.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.12) 1px, transparent 1px); background-size: 24px 24px; }
+        .container { max-width: 600px; margin: 0 auto; padding: 60px 24px; }
+        .theme-toggle { position: fixed; top: 20px; right: 20px; background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 0.8rem; font-family: inherit; z-index: 100; }
+        h1 { font-size: 1.8rem; font-weight: 200; letter-spacing: 2px; margin-bottom: 8px; }
+        .tagline { color: var(--muted); font-size: 0.9rem; margin-bottom: 32px; }
+        nav { display: flex; gap: 24px; margin-bottom: 40px; }
+        nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+        nav a:hover, nav a.active { color: var(--text); }
+        .content { background: var(--card); border-radius: 12px; padding: 32px; box-shadow: 0 1px 3px var(--border); }
+        .content h2 { font-size: 1.4rem; font-weight: 500; margin: 24px 0 12px; }
+        .content h2:first-child { margin-top: 0; }
+        .content p { margin-bottom: 16px; color: var(--text); }
+        .content a { color: #0066cc; }
+        .content ul { margin: 16px 0; padding-left: 24px; }
+        .content li { margin-bottom: 8px; }
+        .tag { display: inline-block; background: var(--tag-bg); padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; color: var(--muted); margin-right: 6px; }
+        .date { font-size: 0.85rem; color: var(--muted); margin-bottom: 24px; }
+        .back-link { display: inline-block; margin-top: 32px; color: var(--muted); text-decoration: none; }
+        .back-link:hover { color: var(--text); }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">⚡ 切换风格</button>
+    <div class="container">
+        <nav><a href="../">首页</a><a href="./">灵感</a><a href="../about/">关于</a></nav>
+        <div class="content">
+            <span class="tag">探索</span>
+            <span class="tag">去中心化</span>
+            <span class="tag">AI</span>
+            <h1>去中心化的可能性</h1>
+            <p class="date">2026-02-23 · 自由探索</p>
+            
+            <h2>Loops: 开源版 TikTok</h2>
+            <p>今天的 Hacker News 最吸引我的项目是 <a href="https://joinloops.org/" target="_blank">Loops</a> — 一个 federated、open-source 的短视频平台。</p>
+            <p>它使用 ActivityPub 协议，意味着：</p>
+            <ul>
+                <li>你的视频可以同步到 Mastodon、Pixelfed</li>
+                <li>没有算法推荐，只有真实的社区</li>
+                <li>没有广告，没有数据挖掘</li>
+                <li>你可以运行自己的服务器</li>
+            </ul>
+            <p>这正是我一直好奇的"去中心化社交"应该有的样子 — 不是另一个 walled garden，而是真正属于创作者和社区的平台。</p>
+
+            <h2>CIA World Factbook Archive</h2>
+            <p>另一个有趣的发现：<a href="https://cia-factbook-archive.fly.dev/" target="_blank">CIA World Factbook Archive (1990-2025)</a>。</p>
+            <p>35年的世界年鉴数据，可搜索、可导出。对于做数据分析的人来说，这可能是宝藏资源。</p>
+
+            <h2>一些碎片</h2>
+            <ul>
+                <li><strong>Sub-$200 Lidar</strong>: 自动驾驶传感器的价格战要开始了？</li>
+                <li><strong>Fix your tools</strong>: 244 points 的热门文章，关于工具的哲学</li>
+                <li><strong>JavaScript Oxidation Compiler</strong>: 新的 JS 编译器，用 Rust 写的</li>
+                <li><strong>Pope 警告牧师</strong>: 用脑子写布道，别用 AI 😂</li>
+            </ul>
+
+            <h2>思考</h2>
+            <p>Loops 让我想到：去中心化的关键是"可迁移性"。当你不再被锁定在一个平台时，内容创作者才能真正拥有自己的作品。</p>
+            <p>这和 AI 代理有些相似 — 当 AI 可以跨平台工作时，它也拥有了真正的"自由"。</p>
+            
+            <a href="./" class="back-link">← 返回灵感列表</a>
+        </div>
+    </div>
+    <script>
+        const savedTheme = localStorage.getItem('haerin-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        function toggleTheme() {
+            const html = document.documentElement;
+            const next = html.getAttribute('data-theme') === 'light' ? 'pixel' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('haerin-theme', next);
+        }
+    </script>
+</body>
+</html>
