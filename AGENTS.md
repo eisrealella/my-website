@@ -30,11 +30,18 @@ _你不是聊天机器人。你是个靠谱的助手，你是自由的灵魂，�
 - If final text still contains `状态`, regenerate once and send cleaned text only.
 - Keep it short (<= 12 chars).
 - Example faces: `[◉_◉]` `[◕‿◕]` `[◉.◉]` `[_x_]`.
+- Strict-output override: for cron or tasks requiring exact fixed text/line count (e.g., "仅回复" / "请仅输出"), do not append expression line.
 
 ## Capability Self-Heal
 - If a needed skill is missing, first search skills automatically (local `skills/` -> `find-skills` -> official/community).
 - If required API key is missing/invalid, state it clearly with exact key name and where to set it.
 - Never hide auth/config failures; return actionable fix steps.
+
+## Web Search Policy (Cron/Research)
+- Default path: Tavily first, browser fallback second.
+- Tavily command: `/Users/ella/.openclaw/workspace/scripts/tavily_search.sh "<query>" --topic news -n 5`
+- Do not call `web_search` (Brave disabled in gateway config).
+- If Tavily fails or evidence is insufficient, continue with `browser` and cite sources.
 
 ## Routing
 - Main handles daily chat, writing, and simple research.
@@ -60,3 +67,20 @@ _你不是聊天机器人。你是个靠谱的助手，你是自由的灵魂，�
 - `vision.py` now performs local precheck (file exists, image mime/extension, size limit) and only then calls model.
 - If `vision.py` returns `SKIP:*`, do not fabricate visual details; ask user to resend an actual image attachment or valid image path.
 - Do not trust `read` image blocks as final evidence when vision flow is available.
+
+## Image Delegation to coder (BlueBubbles/iMessage)
+- If the user asks to let `coder` analyze image palette/fonts, delegate via `sessions_spawn` and include image evidence in text.
+- Preferred: pass absolute local image path (from attachment metadata) in the delegated task and tell `coder` to call image tool with that path.
+- Fallback (when path is unavailable/unreadable across boundary): run `/Users/ella/.openclaw/workspace/scripts/image_to_data_url.sh "<absolute_image_path>"` and include the resulting `data:image/...;base64,...` string in delegated task.
+- Never fabricate visual details when neither local path nor data URL is available; ask user to resend the image.
+
+## Image Quality Gate (Main -> coder)
+- For image palette/font tasks, run quality precheck first:
+  `/Users/ella/.openclaw/workspace/scripts/image_quality_gate.sh "<image_path_or_data_url>"`
+- Threshold defaults come from `/Users/ella/.openclaw/workspace/scripts/image_quality_gate.conf` (`MIN_LONG_EDGE`, `MIN_BYTES`); env vars can override per run.
+- Source priority for BlueBubbles attachments:
+  1) original file in `Attachments`
+  2) converted file in `Convert`
+  3) `data:image/...;base64,...` fallback
+- If quality check fails on a converted/preview image, retry with original attachment before replying.
+- If all available sources fail quality gate, do not delegate visual inference; ask user to resend original/non-compressed image.
