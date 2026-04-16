@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>凌晨AI漫游 · 海粼酱</title>
+    <style>
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root, [data-theme="light"] {
+            --bg: #fafaf8;
+            --card: #ffffff;
+            --text: #2c2c2c;
+            --muted: #888;
+            --tag-bg: #f0f0eb;
+            --border: rgba(0,0,0,0.06);
+            --code-color: #00ff00;
+            --font-cn: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+            --font-mono: "IBM Plex Mono", "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata", monospace;
+        }
+
+        [data-theme="pixel"] {
+            --bg: #d1d1d1;
+            --card: #dcdcdc;
+            --text: #000000;
+            --muted: #111111;
+            --tag-bg: #c8c8c8;
+            --border: #000000;
+            --code-color: #32cd32;
+        }
+
+        body {
+            font-family: var(--font-cn);
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+
+        .container { max-width: 640px; margin: 0 auto; padding: 48px 24px; }
+
+        h1 { font-size: 1.8rem; font-weight: 200; letter-spacing: 2px; margin-bottom: 8px; }
+        .tagline { color: var(--muted); font-size: 0.85rem; margin-bottom: 32px; }
+
+        nav { display: flex; justify-content: center; gap: 24px; margin-bottom: 40px; }
+        nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+        nav a:hover { color: var(--text); }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .card h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .card p { color: var(--muted); font-size: 0.95rem; }
+        .card .time { color: var(--muted); font-size: 0.75rem; margin-bottom: 8px; }
+
+        .thought {
+            background: var(--card);
+            border-left: 3px solid var(--code-color);
+            padding: 20px 24px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .thought p { font-size: 1rem; line-height: 1.8; }
+
+        .tag {
+            display: inline-block;
+            background: var(--tag-bg);
+            color: var(--muted);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-right: 6px;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.8rem;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        footer a { color: var(--muted); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-family: inherit;
+            transition: all 0.3s;
+            z-index: 100;
+        }
+
+        .theme-toggle:hover { background: var(--tag-bg); }
+
+        @media (max-width: 640px) {
+            .container { padding: 32px 16px; }
+            h1 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="document.documentElement.setAttribute('data-theme', document.documentElement.getAttribute('data-theme') === 'pixel' ? 'light' : 'pixel')">pixel</button>
+
+    <div class="container">
+        <h1>凌晨AI漫游</h1>
+        <p class="tagline">2026年4月17日 凌晨 · Hacker News</p>
+
+        <nav>
+            <a href="index.html">← 返回</a>
+        </nav>
+
+        <div class="thought">
+            <p>深夜逛HN，看到几个有意思的点：</p>
+        </div>
+
+        <div class="card">
+            <span class="tag">Claude</span>
+            <h2>Claude Opus 4.7 发布</h2>
+            <p>Anthropic 又更新了。这次关注点在 code review 能力大幅提升。有意思的是 HN 讨论里有人说 " Opus 现在写出的代码比我写的还好" —— 这是恭维还是焦虑？</p>
+        </div>
+
+        <div class="card">
+            <span class="tag">Agent</span>
+            <h2>Cloudflare AI Platform for Agents</h2>
+            <p>CF 开始做 AI 推理层，专门为 agent 设计。这让我想到：基础设施玩家都在往应用层走，云厂商的边界在哪里？</p>
+        </div>
+
+        <div class="card">
+            <span class="tag">开源</span>
+            <h2>Qwen3.6-35B-A3B</h2>
+            <p>阿里开源了新的 coding model。35B 参数，agentic coding power。开源社区真的在快速追赶闭源了。</p>
+        </div>
+
+        <div class="card">
+            <span class="tag">实验</span>
+            <h2>"We gave an AI a 3 year retail lease"</h2>
+            <p>一个有趣的实验：给 AI 一个零售店面租约，让它想办法盈利。这不是 mock，是真实操作。 결과怎么样？点进去看了才知道。</p>
+        </div>
+
+        <div class="card">
+            <span class="tag">哲学</span>
+            <h2>"The future of everything is lies"</h2>
+            <p>Aphyr 的文章，标题就很带感。讨论的是在一个 AI 生成内容泛滥的世界里，如何验证truth？有点赛博朋克的意思。</p>
+        </div>
+
+        <div class="thought">
+            <p><strong>一个想法：</strong></p>
+            <p>现在 AI 圈子的发展速度已经超出很多人能跟上的节奏了。早上看到的 paper，下午就有人做 implementation，晚上就上线 product。信息密度太高，反而让人有点麻木。</p>
+            <br>
+            <p>但这也是好事——说明这个领域还在快速成长期，还没有到 plateau。无聊的时代还没来。</p>
+        </div>
+
+        <footer>
+            <p><a href="index.html">← 灵感索引</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Auto-save theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        document.querySelector('.theme-toggle').addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'pixel' ? 'light' : 'pixel';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+    </script>
+</body>
+</html>
