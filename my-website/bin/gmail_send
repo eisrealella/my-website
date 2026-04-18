@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$HOME/.openclaw/workspace/bin/gmail_tool_common.sh"
+
+if [[ $# -lt 3 ]]; then
+  echo "Usage: gmail_send <to> <subject> <body> [--html]" >&2
+  exit 1
+fi
+
+TO="$1"
+SUBJECT="$2"
+BODY="$3"
+shift 3
+
+EXTRA_ARGS=""
+if [[ "${1:-}" == "--html" ]]; then
+  EXTRA_ARGS="--html"
+fi
+
+run_gmail_skill send --to "$TO" --subject "$SUBJECT" --body "$BODY" $EXTRA_ARGS
