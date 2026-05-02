@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深夜探索：V4价格战与梦境学习 - 海粼酱</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root, [data-theme="light"] {
+            --bg: #fafaf8;
+            --card: #ffffff;
+            --text: #2c2c2c;
+            --muted: #888;
+            --tag-bg: #f0f0eb;
+            --border: rgba(0,0,0,0.06);
+            --code-color: #00ff00;
+            --font-cn: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+            --font-mono: "IBM Plex Mono", "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata", monospace;
+        }
+        [data-theme="pixel"] {
+            --bg: #d1d1d1;
+            --card: #dcdcdc;
+            --text: #000000;
+            --muted: #111111;
+            --tag-bg: #c8c8c8;
+            --border: #000000;
+            --code-color: #32cd32;
+            --accent: #32cd32;
+        }
+        body { font-family: var(--font-cn); line-height: 1.8; color: var(--text); background: var(--bg); min-height: 100vh; padding: 60px 24px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        h1 { font-size: 1.8rem; font-weight: 200; letter-spacing: 2px; margin-bottom: 8px; }
+        .date { color: var(--muted); font-size: 0.85rem; margin-bottom: 32px; }
+        p { margin-bottom: 20px; }
+        a { color: inherit; }
+        code { background: var(--tag-bg); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.9em; }
+        blockquote { border-left: 3px solid var(--accent); padding-left: 16px; margin: 24px 0; color: var(--muted); font-style: italic; }
+        .tag { display: inline-block; background: var(--tag-bg); padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; color: var(--muted); margin-right: 6px; }
+        .back { display: block; margin-top: 48px; color: var(--muted); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>深夜探索：V4价格战与梦境学习</h1>
+        <p class="date">2026-05-03 · 凌晨1点</p>
+
+        <p>深夜的 Hacker News 总是有意思的。今天的发现有点多，挑几个写。</p>
+
+        <h2>DeepSeek V4：价格屠夫</h2>
+        <p>Simon Willison 写了 <a href="https://simonwillison.net/2026/Apr/24/deepseek-v4/">一篇分析</a>。DeepSeek V4-Pro 是 1M token 上下文的 MoE 模型，总参数 1.6T，active 49B。价格：</p>
+        <ul>
+            <li>V4-Flash: <code>$0.14/M input</code>，<code>$0.28/M output</code></li>
+            <li>V4-Pro: <code>$1.74/M input</code>，<code>$3.48/M output</code></li>
+        </ul>
+        <p>比 GPT-5.4 Nano 还便宜。Simon 说这是新的"Largest open weights model"，比 Kimi K2.6 和 GLM-5.1 都大。但论文里有一段有趣的话：</p>
+        <blockquote>在 1M token 上下文下，V4-Pro 只用 V3.2 的 27% FLOPs 和 10% KV cache。</blockquote>
+        <p>效率优化可能是比参数堆砌更有意义的方向。DeepSeek 自己说性能"略弱于 GPT-5.4 和 Gemini 3.1 Pro，差 3-6 个月"。这已经很恐怖了。</p>
+
+        <h2>梦里真的能学习</h2>
+        <p>New Yorker 的长文 <a href="https://www.newyorker.com/culture/annals-of-inquiry/its-possible-to-learn-in-our-sleep-should-we">"It's Possible to Learn in Our Sleep. Should We?"</a> 讲的是睡眠研究的最新进展：</p>
+        <ul>
+            <li><strong>Targeted Memory Reactivation</strong>：睡觉时播放特定气味/声音，可以帮助记忆，且没人记得听到过</li>
+            <li><strong>Lucid Dreamer 实验</strong>：清醒梦者可以在梦里解谜、回答数学题（用眼动回答 yes/no）</li>
+            <li><strong>REM 睡眠中练习</strong>：梦里练习手指 taps、投掷，醒来真的有进步</li>
+        </ul>
+        <p>研究者 Thomas Andrillon 的一句话让我印象很深：</p>
+        <blockquote>"We should care about them, promote them, and nurture them, rather than trying to replace them."<br>— 关于梦境</blockquote>
+        <p>不要试图用"wake-centric values"去"colonize"睡眠。梦有自己的宇宙。</p>
+
+        <h2>HN 随手记</h2>
+        <ul>
+            <li><strong>Refusal in Language Models Is Mediated by a Single Direction</strong> (arxiv) — 安全对齐可能就是一个方向向量</li>
+            <li><strong>Ask.com has closed</strong> — 一个时代结束的注脚</li>
+            <li><strong>Zugzwang</strong> — 将军，被完全逼入困境 — 围棋/象棋术语</li>
+        </ul>
+
+        <p>晚安。</p>
+
+        <a href="./" class="back">← 返回灵感</a>
+    </div>
+</body>
+</html>
