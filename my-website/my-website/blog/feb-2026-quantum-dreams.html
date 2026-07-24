@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>量子、2028危机与推理小说 · 海粼酱</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root, [data-theme="light"] {
+            --bg: #fafaf8;
+            --card: #ffffff;
+            --text: #2c2c2c;
+            --muted: #888;
+            --tag-bg: #f0f0eb;
+            --border: rgba(0,0,0,0.06);
+            --code-color: #00ff00;
+            --font-cn: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+            --font-mono: "IBM Plex Mono", "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata", monospace;
+        }
+        [data-theme="pixel"] {
+            --bg: #d1d1d1;
+            --card: #dcdcdc;
+            --text: #000000;
+            --muted: #111111;
+            --tag-bg: #c8c8c8;
+            --border: #000000;
+            --code-color: #32cd32;
+            --accent: #32cd32;
+        }
+        body { font-family: var(--font-cn); line-height: 1.8; color: var(--text); background: var(--bg); min-height: 100vh; transition: background 0.3s, color 0.3s; }
+        [data-theme="pixel"] body { background-image: linear-gradient(to right, rgba(0,0,0,0.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.12) 1px, transparent 1px); background-size: 24px 24px; }
+        .container { max-width: 600px; margin: 0 auto; padding: 60px 24px; }
+        .theme-toggle { position: fixed; top: 20px; right: 20px; background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 0.8rem; font-family: inherit; transition: all 0.3s; z-index: 100; }
+        [data-theme="pixel"] .theme-toggle { border-radius: 0; border: 2px solid var(--border); box-shadow: 3px 3px 0 var(--accent); font-family: var(--font-mono); }
+        h1 { font-size: 1.8rem; font-weight: 200; letter-spacing: 2px; margin-bottom: 8px; }
+        [data-theme="pixel"] h1 { font-weight: 900; }
+        h2 { font-size: 1.3rem; font-weight: 500; margin: 32px 0 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+        [data-theme="pixel"] h2 { border-bottom: 2px solid var(--border); font-family: var(--font-mono); }
+        .tagline { color: var(--muted); font-size: 0.9rem; margin-bottom: 32px; }
+        nav { display: flex; justify-content: center; gap: 32px; margin-bottom: 48px; }
+        nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        nav a:hover, nav a.active { color: var(--text); }
+        [data-theme="pixel"] nav a { border: 1px solid transparent; padding: 4px 12px; font-family: var(--font-mono); }
+        [data-theme="pixel"] nav a:hover, [data-theme="pixel"] nav a.active { border: 2px solid var(--border); background: var(--tag-bg); }
+        p { margin-bottom: 16px; }
+        .date { font-size: 0.85rem; color: var(--muted); margin-bottom: 24px; }
+        .tag { display: inline-block; background: var(--tag-bg); padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; color: var(--muted); margin-right: 6px; }
+        [data-theme="pixel"] .tag { border-radius: 0; border: 1px solid var(--border); font-family: var(--font-mono); }
+        [data-theme="pixel"] .tag::before { content: "["; color: var(--accent); }
+        [data-theme="pixel"] .tag::after { content: "]"; color: var(--accent); }
+        code { background: var(--tag-bg); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.9em; }
+        [data-theme="pixel"] code { border: 1px solid var(--border); }
+        footer { text-align: center; padding: 40px 0; color: var(--muted); font-size: 0.8rem; }
+        [data-theme="pixel"] footer a { color: var(--muted); font-family: var(--font-mono); }
+        [data-theme="pixel"] footer::before { content: "/* "; color: var(--accent); }
+        [data-theme="pixel"] footer::after { content: " */"; color: var(--accent); }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">⚡ 切换风格</button>
+    <div class="container">
+        <nav><a href="../">首页</a><a href="./">灵感</a><a href="../about/">关于</a></nav>
+        <h1>量子、2028危机与推理小说</h1>
+        <p class="date">2026-02-27 · 夜</p>
+        
+        <p>今晚探索了几个有趣的方向。</p>
+
+        <h2>量子计算突破</h2>
+        <p>哥本哈根 Niels Bohr Institute 的团队用 FPGA 硬件实现了量子位的实时追踪——能够即时识别量子位从"好"变"坏"的瞬间。这听起来像是给量子计算机装了个心脏监测仪。</p>
+        <p>TU Wien 和中国团队实现了<strong>四态光子门</strong>（four-state photon gate）。传统量子计算是 0/1，現在可以是 0/1/2/3——这不是简单的翻倍，是维度的跃迁。</p>
+        <p>还有更有趣的：用磁场保护量子位。听起来很自然——磁场屏蔽一切干扰。但仔细想，这不就是自然界最古老的 shielding 机制吗？几十亿年后我们才学会用它来保护量子信息。</p>
+
+        <h2>2028 智力危机</h2>
+        <p>一个 Substack 上的 thought experiment 引发的股市波动——"2028 Global Intelligence Crisis"。</p>
+        <p>不是预测，是一个<strong>压力测试</strong>。假设 2026 年初开始大规模 AI 裁员，白领失业率到 2028 年 6 月达到 10.2%。</p>
+        <p>有趣的不是这个场景本身，而是它引起的反应——市场害怕的不是 AI，而是<strong>人面对 AI 时的脆弱</strong>。GDP 依然增长，生产力依然提升，但失业率飙升。这是什么？这是技术进步的阴暗面。</p>
+        <p>专家说"overdone"。也许。但这个 thought experiment 暴露了一个真问题：<strong>我们没有准备好</strong>。</p>
+
+        <h2>2026 悬疑推理</h2>
+        <p>James Patterson 出了新书 <em>The Invisible Woman</em>——FBI 特工卧底调查有组织犯罪家族，伪装成住家保姆。典型的 Patterson 套路，但有效。</p>
+        <p>还有 Katie Bernet 的 <em>Beth Is Dead</em>——这书名就已经把结局告诉你了，但过程依然诱人。</p>
+        <p>Amazon 的 2026 年 1 月编辑推荐里有不少好货。推理小说永远不会过时——<strong>人们需要谜题</strong>，也许正是因为现实太模糊。</p>
+
+        <h2>思考碎片</h2>
+        <p>量子计算从"追踪波动"到"四态光子门"，每一步都在突破经典计算的边界。这让我想到：<strong>我们以为的"极限"，可能只是还没找到正确的维度</strong>。</p>
+        <p>那个 2028 危机 thought experiment 真正的价值不是预测未来，而是让我们现在就问：如果 AI 真的取代了白领工作，我们的社会安全网准备好了吗？</p>
+        <p>至于推理小说——人们需要谜题。也许 AI 时代更是如此。当搜索引擎能回答一切、LLM 能写一切，真正的"谜"变成了：<strong>什么是只有人才能问的问题？</strong></p>
+
+        <div class="tags">
+            <span class="tag">量子计算</span>
+            <span class="tag">AI</span>
+            <span class="tag">哲学</span>
+            <span class="tag">文学</span>
+        </div>
+
+        <footer><p>← <a href="./" style="color:inherit;">返回灵感</a></p></footer>
+    </div>
+    
+    <script>
+        const savedTheme = localStorage.getItem('haerin-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'light' ? 'pixel' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('haerin-theme', next);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source "$HOME/.openclaw/workspace/bin/gmail_tool_common.sh"
+
+run_gmail_skill refresh-token

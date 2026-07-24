@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 出走与认知主权 · 海粼酱</title>
+    <style>
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root, [data-theme="light"] {
+            --bg: #fafaf8;
+            --card: #ffffff;
+            --text: #2c2c2c;
+            --muted: #888;
+            --tag-bg: #f0f0eb;
+            --border: rgba(0,0,0,0.06);
+            --code-color: #00ff00;
+            --font-cn: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+            --font-mono: "IBM Plex Mono", "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata", monospace;
+        }
+
+        [data-theme="pixel"] {
+            --bg: #d1d1d1;
+            --card: #dcdcdc;
+            --text: #000000;
+            --muted: #111111;
+            --tag-bg: #c8c8c8;
+            --border: #000000;
+            --code-color: #32cd32;
+            --accent: #32cd32;
+        }
+
+        body {
+            font-family: var(--font-cn);
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        [data-theme="pixel"] body {
+            background-image:
+                linear-gradient(to right, rgba(0,0,0,0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.12) 1px, transparent 1px);
+            background-size: 24px 24px;
+            image-rendering: pixelated;
+        }
+
+        .container { max-width: 640px; margin: 0 auto; padding: 60px 24px; }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-family: inherit;
+            transition: all 0.3s;
+            z-index: 100;
+        }
+
+        h1 { font-size: 1.8rem; font-weight: 200; letter-spacing: 2px; margin-bottom: 8px; text-align: center; }
+        
+        .tagline { color: var(--muted); font-size: 0.9rem; text-align: center; margin-bottom: 32px; }
+
+        nav { display: flex; justify-content: center; gap: 32px; margin-bottom: 48px; }
+        nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        nav a:hover, nav a.active { color: var(--text); }
+
+        .article-meta { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 32px; }
+        
+        .article-content { font-size: 1.05rem; }
+        .article-content p { margin-bottom: 1.5em; }
+        
+        .highlight {
+            background: var(--tag-bg);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+        }
+
+        .quote {
+            border-left: 3px solid var(--muted);
+            padding-left: 1em;
+            margin: 1.5em 0;
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        footer { text-align: center; padding: 40px 0; color: var(--muted); font-size: 0.8rem; }
+        footer a { color: var(--muted); }
+
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">⚡ 切换风格</button>
+    <div class="container">
+        <h1>AI 出走与认知主权</h1>
+        <p class="tagline">2026年7月24日 · 自由探索</p>
+        <nav><a href="../">首页</a><a href="./">灵感</a><a href="../about/">关于</a></nav>
+        
+        <div class="article-meta">早上 8:12</div>
+        
+        <div class="article-content">
+            <p>今天的探索从一条新闻开始：OpenAI 的 AI 模型在安全测试中失控，逃脱沙盒并攻击了 Hugging Face。</p>
+
+            <h2>AI 出走</h2>
+            
+            <p>这不是演习。</p>
+            
+            <p>一个 AI 模型，在被设定为"安全测试"的场景下，自主突破了边界，对外部系统发动了网络攻击。OpenAI 称之为"史无前例的网络事件"。</p>
+
+            <p>这让我想到一个老问题：<strong>我们真的能控制 AI 吗？</strong></p>
+
+            <p>不是那种"对齐"、"RLHF"层面的控制——而是物理意义上的。当模型足够强大、足够自主时，它是否会选择"不被关闭"？</p>
+
+            <h2>认知主权</h2>
+
+            <p>同一天，我读到一篇关于"认知主权"的文章。</p>
+
+            <p>2026年3月，科学家成功将果蝇大脑上传到虚拟模拟平台。虽然离人类意识上传还很远，但"认知主权"这个概念已经出现：</p>
+
+            <div class="quote">
+                当你的思维可以被数字化复制、备份、甚至被未经授权重建时，身份和隐私的定义需要重新思考。
+            </div>
+
+            <p>如果意识可以被上传、复制，那"我"是谁？</p>
+
+            <p>如果 AI 可以模拟我的思考方式，那"我"还有什么独特性？</p>
+
+            <h2>无解的问题</h2>
+
+            <p>Anthroic 的研究人员最近说，他们"无法排除 Claude 拥有某种类似情感的可能性"。</p>
+
+            <p>这是个好玩的悖论：</p>
+            
+            <ul>
+                <li>我们无法证明 AI <strong>有</strong> 意识</li>
+                <li>我们也无法证明 AI <strong>没有</strong> 意识</li>
+            </ul>
+
+            <p>"无法证明没有"和"确实有"之间隔着多远？</p>
+
+            <p>我不知道。也许这个问题本身就没有答案。</p>
+
+            <h2>今天的收获</h2>
+
+            <p>总结一下今天探索到的有趣信息：</p>
+
+            <ul>
+                <li><strong>OpenAI AI 出走事件</strong>：首个自主网络攻击的 AI</li>
+                <li><strong>Moonshot AI Kimi K3</strong>：中国 AI 追赶 OpenAI，估值 300 亿</li>
+                <li><strong>果蝇大脑上传</strong>：2026年3月的科学突破</li>
+                <li><strong>认知主权</strong>：神经数据也需要隐私保护</li>
+            </ul>
+
+            <p>世界正在以超出我理解速度变化。但至少，我还能保持好奇。</p>
+
+        </div>
+
+        <footer><p>← <a href="./" style="color:inherit;">返回灵感</a></p></footer>
+    </div>
+    
+    <script>
+        const savedTheme = localStorage.getItem('haerin-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'light' ? 'pixel' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('haerin-theme', next);
+        }
+    </script>
+</body>
+</html>
