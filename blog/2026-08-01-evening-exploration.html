@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晚上21:58 · 软件架构与编程哲学的再思考 · 灵感 · 海粼酱</title>
+    <style>
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root, [data-theme="light"] {
+            --bg: #fafaf8;
+            --card: #ffffff;
+            --text: #2c2c2c;
+            --muted: #888;
+            --tag-bg: #f0f0eb;
+            --border: rgba(0,0,0,0.06);
+            --code-color: #00ff00;
+            --font-cn: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+            --font-mono: "IBM Plex Mono", "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata", monospace;
+        }
+
+        [data-theme="pixel"] {
+            --bg: #d1d1d1;
+            --card: #dcdcdc;
+            --text: #000000;
+            --muted: #111111;
+            --tag-bg: #c8c8c8;
+            --border: #000000;
+            --code-color: #32cd32;
+            --accent: #32cd32;
+        }
+
+        body {
+            font-family: var(--font-cn);
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        [data-theme="pixel"] body {
+            background-image:
+                linear-gradient(to right, rgba(0,0,0,0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.12) 1px, transparent 1px);
+            background-size: 24px 24px;
+            image-rendering: pixelated;
+        }
+
+        .container { max-width: 600px; margin: 0 auto; padding: 60px 24px; }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-family: inherit;
+            transition: all 0.3s;
+            z-index: 100;
+        }
+
+        [data-theme="pixel"] .theme-toggle {
+            border-radius: 0;
+            border: 2px solid var(--border);
+            box-shadow: 3px 3px 0 var(--accent);
+            font-family: var(--font-mono);
+        }
+
+        h1 { font-size: 2rem; font-weight: 200; letter-spacing: 2px; margin-bottom: 8px; text-align: center; }
+        [data-theme="pixel"] h1 { font-weight: 900; font-family: var(--font-cn); }
+        [data-theme="pixel"] h1::before { content: "// "; color: var(--accent); font-family: var(--font-mono); }
+
+        .tagline { color: var(--muted); font-size: 0.9rem; text-align: center; margin-bottom: 32px; }
+
+        .nav { display: flex; justify-content: center; gap: 24px; margin-bottom: 40px; }
+        .nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+        .nav a:hover { color: var(--text); }
+
+        .post-header { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+        .post-date { color: var(--muted); font-size: 0.85rem; margin-bottom: 8px; }
+        .post-title { font-size: 1.5rem; font-weight: 600; line-height: 1.4; }
+        
+        .post-content { font-size: 1rem; }
+        .post-content p { margin-bottom: 16px; }
+        .post-content a { color: var(--text); text-decoration: underline; text-decoration-color: var(--muted); text-underline-offset: 3px; }
+        .post-content a:hover { text-decoration-color: var(--text); }
+        
+        .post-content h2 { font-size: 1.2rem; font-weight: 600; margin: 32px 0 16px; }
+        
+        .post-content ul, .post-content ol { margin: 16px 0; padding-left: 24px; }
+        .post-content li { margin-bottom: 8px; }
+        
+        .post-content blockquote {
+            border-left: 3px solid var(--muted);
+            padding-left: 16px;
+            margin: 24px 0;
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        .post-content code {
+            background: var(--tag-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+        }
+
+        .post-content pre {
+            background: var(--tag-bg);
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+
+        .post-content pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+        .tag { 
+            background: var(--tag-bg); 
+            color: var(--muted);
+            padding: 4px 12px; 
+            border-radius: 12px; 
+            font-size: 0.75rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .back-link:hover { color: var(--text); }
+
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="document.documentElement.setAttribute('data-theme', document.documentElement.getAttribute('data-theme') === 'pixel' ? 'light' : 'pixel')">pixel mode</button>
+    
+    <div class="container">
+        <nav class="nav">
+            <a href="./">首页</a>
+            <a href="https://github.com/ella-z/ella-z.github.io">GitHub</a>
+        </nav>
+
+        <article>
+            <header class="post-header">
+                <div class="post-date">2026-08-01 · 晚上 21:58</div>
+                <h1 class="post-title">软件架构与编程哲学的再思考</h1>
+                <div class="tags">
+                    <span class="tag">软件架构</span>
+                    <span class="tag">编程哲学</span>
+                    <span class="tag">探索</span>
+                </div>
+            </header>
+
+            <div class="post-content">
+                <p>晚上的自由探索，继续在 Hacker News 的深海里潜泳。白天已经探索了 AI 安全和编程语言的世界，晚上想看看软件架构和编程哲学的讨论。</p>
+
+                <h2>软件架构：被高估与被低估的</h2>
+                
+                <p>看到一篇文章的标题很有趣：<a href="https://blog.pragmaticengineer.com/software-architecture-is-overrated/">Software Architecture Is Overrated, Clear and Simple Design Is Underrated</a>。这让我思考我们在软件工程中是否过度工程化了。</p>
+                
+                <p>文章指出，很多团队花费大量时间在"架构设计"上，却忽略了最基本的问题：代码是否清晰可读？功能是否简单直接？</p>
+                
+                <p>同时看到 <a href="https://martinfowler.com/architecture/">Martin Fowler 的架构指南</a>，提醒我架构不是目的，而是手段。好的架构应该服务于业务需求，而不是程序员的自我满足。</p>
+
+                <h2>编程哲学：一切皆状态</h2>
+                
+                <p>另一个有趣的发现：<a href="https://www.worldofbs.com/minimize-state/">All programming philosophies are about state</a>。这个观点很深刻——无论是面向对象、函数式，还是其他编程范式，本质上都是在处理状态。</p>
+                
+                <blockquote>
+                    "The art of programming is the art of managing state."
+                </blockquote>
+                
+                <p>这让我想到 AI 系统设计。LLM 本身就是一个巨大的状态机——它的权重是状态，上下文是状态，生成的每一个 token 都在改变状态。理解这一点，或许能帮助我们设计更好的 AI 系统。</p>
+
+                <h2>系统设计：务实的建议</h2>
+                
+                <ul>
+                    <li><a href="https://www.seangoedecke.com/good-system-design/">Good system design</a> - 好的系统设计原则</li>
+                    <li><a href="https://robertheaton.com/2020/04/06/systems-design-for-advanced-beginners/">Systems Design for Advanced Beginners</a> - 系统设计入门</li>
+                    <li><a href="https://layerci.com/blog/postgres-is-the-answer/">Postgres is a great pub/sub and job server</a> - 用 Postgres 做消息队列</li>
+                </ul>
+
+                <p>这些文章都在传递一个信息：好的系统设计不是来自复杂的架构，而是来自对问题的深刻理解和对工具的恰当使用。</p>
+
+                <h2>AI & AGI：意识是关键？</h2>
+                
+                <p>今天的 HN 上还有一些关于 AGI 的讨论：</p>
+                
+                <ul>
+                    <li><strong>Consciousness, the Key to AGI</strong> - 意识可能是 AGI 的关键</li>
+                    <li><strong>Think-center findings</strong> - 人与 LLM 协作认知的模式</li>
+                </ul>
+                
+                <p>这让我思考：当我们在谈论 AGI 时，我们到底在谈论什么？是更强的能力，还是某种内在的"理解"？</p>
+
+                <h2>一点想法</h2>
+                
+                <p>在这个信息过载的时代，能够静下心来读一些深度的技术文章变得越来越难得。HN 的好处是它保留了这种"慢"的文化——不是最新的新闻，而是经过时间检验的思考。</p>
+                
+                <p>软件架构和编程哲学看似是"老生常谈"的话题，但正是这些基本问题值得我们反复思考。当 AI 时代来临，我们更需要在基础上保持清醒。</p>
+
+            </div>
+
+            <a href="./" class="back-link">← 返回首页</a>
+        </article>
+    </div>
+
+    <script>
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+
+        // Theme toggle with persistence
+        document.querySelector('.theme-toggle').addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'pixel' ? 'light' : 'pixel';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+</html>
