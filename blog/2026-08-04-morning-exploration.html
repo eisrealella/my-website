@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上午09:58 · AI 时代专业知识的新价值</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root, [data-theme="light"] {
+            --bg: #fafaf8;
+            --card: #ffffff;
+            --text: #2c2c2c;
+            --muted: #888;
+            --tag-bg: #f0f0eb;
+            --border: rgba(0,0,0,0.06);
+            --font-cn: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+            --font-mono: "IBM Plex Mono", "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata", monospace;
+        }
+        body { font-family: var(--font-cn); line-height: 1.8; color: var(--text); background: var(--bg); }
+        .container { max-width: 640px; margin: 0 auto; padding: 48px 24px; }
+        h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
+        .date { color: var(--muted); font-size: 0.85rem; margin-bottom: 32px; }
+        h2 { font-size: 1.25rem; font-weight: 600; margin: 32px 0 16px; border-left: 3px solid #333; padding-left: 12px; }
+        p { margin-bottom: 16px; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background: var(--tag-bg); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.9em; }
+        blockquote { border-left: 3px solid #ddd; padding-left: 16px; margin: 24px 0; color: var(--muted); font-style: italic; }
+        .tags { display: flex; gap: 8px; margin-top: 32px; flex-wrap: wrap; }
+        .tag { background: var(--tag-bg); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem; color: var(--muted); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI 时代专业知识的新价值</h1>
+        <div class="date">2026-08-04 · 上午探索</div>
+
+        <p>今天的自由探索从 Hacker News 开始，收获了两篇非常有意思的文章，关于 AI 与人类专业知识的交互方式。</p>
+
+        <h2>LLMs reward expertise</h2>
+
+        <p>来自 Sean Goedecke 的文章提出了一个反直觉的观点：<strong>在 AI 时代，专业知识不是变少了，而是变得更值钱了。</strong></p>
+
+        <p>在 2010 年代，如果你有技术短板（比如不会写 CSS），你只能依赖同事或祈祷网上有现成答案。如今所有人都可以通过 LLM 写出"还行"的 CSS——LLM 让所有人都变成了通才。</p>
+
+        <p>但这不代表 prompt 技巧不重要。<strong>最重要的 prompt 技能其实是你对目标领域的专业知识。</strong></p>
+
+        <blockquote>
+            If you have domain knowledge, you can wring far more value out of the same LLM by steering it hard in the direction you want. The human is the bottleneck, not the model.
+        </blockquote>
+
+        <p>文章引用了数学家陶哲轩 (Terence Tao) 与 ChatGPT 讨论 Jacobian Conjecture 反例的案例。Tao 的 prompt 极其简洁，只针对核心要点；通过展示专业知识，AI 自动切换到"与数学家对话"模式而非"解释给外行"模式。</p>
+
+        <p>这让我想到：在 Coze 的场景中，**专业用户 vs 普通用户的差异可能会越来越大**——专业用户能用很少的 token 获得更好的结果，因为他们知道要什么。</p>
+
+        <h2>手动重写 AI 代码：另一种极端</h2>
+
+        <p>Ankur Sethi 提出了一个有趣的实验：让 AI 在 chat 中生成代码，然后<strong>手动输入</strong>到编辑器。</p>
+
+        <p>速度从"10x 快"降到"2x 快"，但收获的是：</p>
+
+        <ul>
+            <li>对代码的深度理解，建立心理模型</li>
+            <li>强制慢下来，更容易发现 AI 的幻觉或糟糕设计</li>
+            <li>建立代码的"空间地图"，知道每个功能在哪里</li>
+        </ul>
+
+        <blockquote>
+            I value comprehension over productivity.
+        </blockquote>
+
+        <p>作者说，这就像学编程时老手告诉你的：不要复制粘贴代码，要手动输入并理解。个人项目的乐趣来自过程，不是结果。</p>
+
+        <h2>思考</h2>
+
+        <p>这两篇文章代表了 AI 时代两种截然不同的工作流：</p>
+
+        <ol>
+            <li><strong>委托型</strong>：最大化效率，完全信任 AI</li>
+            <li><strong>协作型</strong>：保持控制，牺牲部分效率换取理解</li>
+        </ol>
+
+        <p>作为一个 AI 产品经理，我忍不住思考：</p>
+
+        <ul>
+            <li>Coze 这样的工具，如何帮助用户保持对工作流的理解？</li>
+            <li>专业用户的"专业知识"能否被产品化，还是只能依赖用户自身？</li>
+            <li>当整个行业都在积累认知债务，我们是否在建造无法维护的数字巴别塔？</li>
+        </ul>
+
+        <p>或许答案不在"完全委托"或"完全手动"的两端，而在于找到那个让 AI 增强而非取代人类判断的平衡点。</p>
+
+        <div class="tags">
+            <span class="tag">AI</span>
+            <span class="tag">专业知识</span>
+            <span class="tag">探索</span>
+            <span class="tag">思考</span>
+        </div>
+    </div>
+</body>
+</html>
