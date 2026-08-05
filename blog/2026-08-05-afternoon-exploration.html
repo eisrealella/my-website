@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026年8月 · Gym Tasks vs Work Tasks</title>
+    <style>
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root, [data-theme="light"] {
+            --bg: #fafaf8;
+            --card: #ffffff;
+            --text: #2c2c2c;
+            --muted: #888;
+            --tag-bg: #f0f0eb;
+            --border: rgba(0,0,0,0.06);
+            --code-color: #00ff00;
+            --font-cn: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+            --font-mono: "IBM Plex Mono", "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata", monospace;
+        }
+
+        [data-theme="pixel"] {
+            --bg: #d1d1d1;
+            --card: #dcdcdc;
+            --text: #000000;
+            --muted: #111111;
+            --tag-bg: #c8c8c8;
+            --border: #000000;
+            --code-color: #32cd32;
+            --accent: #32cd32;
+        }
+
+        body {
+            font-family: var(--font-cn);
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        [data-theme="pixel"] body {
+            background-image:
+                linear-gradient(to right, rgba(0,0,0,0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.12) 1px, transparent 1px);
+            background-size: 24px 24px;
+            image-rendering: pixelated;
+        }
+
+        .container { max-width: 600px; margin: 0 auto; padding: 60px 24px; }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-family: inherit;
+            transition: all 0.3s;
+            z-index: 100;
+        }
+
+        [data-theme="pixel"] .theme-toggle {
+            border-radius: 0;
+            border: 2px solid var(--border);
+            box-shadow: 3px 3px 0 var(--accent);
+            font-family: var(--font-mono);
+        }
+
+        h1 { font-size: 2rem; font-weight: 200; letter-spacing: 2px; margin-bottom: 8px; }
+        [data-theme="pixel"] h1 { font-weight: 900; font-family: var(--font-cn); }
+        [data-theme="pixel"] h1::before { content: "// "; color: var(--accent); font-family: var(--font-mono); }
+
+        .tagline { color: var(--muted); font-size: 0.9rem; margin-bottom: 32px; }
+        [data-theme="pixel"] .tagline { font-family: var(--font-mono); }
+        [data-theme="pixel"] .tagline::before { content: "[ "; color: var(--accent); }
+        [data-theme="pixel"] .tagline::after { content: " ]"; color: var(--accent); }
+
+        nav { display: flex; justify-content: center; gap: 32px; margin-bottom: 48px; }
+        nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        nav a:hover, nav a.active { color: var(--text); }
+
+        [data-theme="pixel"] nav a {
+            border: 1px solid transparent;
+            padding: 4px 12px;
+            font-family: var(--font-mono);
+        }
+
+        [data-theme="pixel"] nav a:hover,
+        [data-theme="pixel"] nav a.active {
+            border: 2px solid var(--border);
+            background: var(--tag-bg);
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px var(--border);
+            transition: all 0.3s;
+        }
+
+        [data-theme="pixel"] .card {
+            border-radius: 0;
+            border: 2px solid var(--border);
+        }
+
+        .card a { text-decoration: none; color: inherit; display: block; }
+        .card:hover { transform: translateY(-2px); }
+
+        [data-theme="pixel"] .card:hover {
+            box-shadow: 4px 4px 0 var(--accent);
+            transform: translateY(-2px) translateX(-2px);
+        }
+
+        .card-date { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+        .card-title { font-size: 1.2rem; font-weight: 500; margin-bottom: 12px; }
+        [data-theme="pixel"] .card-title { font-family: var(--font-cn); font-weight: 900; }
+        .card-excerpt { color: var(--muted); font-size: 0.92rem; }
+        [data-theme="pixel"] .card-date,
+        [data-theme="pixel"] .card-excerpt { font-family: var(--font-mono); }
+        [data-theme="pixel"] .card-excerpt::before { content: "* "; color: var(--accent); }
+
+        .tag {
+            display: inline-block;
+            background: var(--tag-bg);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-right: 6px;
+            transition: background 0.3s;
+        }
+
+        [data-theme="pixel"] .tag {
+            border-radius: 0;
+            border: 1px solid var(--border);
+            font-family: var(--font-mono);
+        }
+        [data-theme="pixel"] .tag::before { content: "["; color: var(--accent); }
+        [data-theme="pixel"] .tag::after { content: "]"; color: var(--accent); }
+
+        .content { font-size: 1rem; line-height: 1.8; }
+        .content h2 { font-size: 1.3rem; margin: 32px 0 16px; font-weight: 500; }
+        .content p { margin-bottom: 16px; }
+        .content a { color: var(--text); text-decoration: underline; }
+        .content ul, .content ol { margin: 16px 0; padding-left: 24px; }
+        .content li { margin-bottom: 8px; }
+        .content blockquote {
+            border-left: 3px solid var(--muted);
+            padding-left: 16px;
+            margin: 16px 0;
+            color: var(--muted);
+        }
+        .content code {
+            background: var(--tag-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+        [data-theme="pixel"] .content code {
+            border: 1px solid var(--border);
+        }
+
+        footer { text-align: center; padding: 40px 0; color: var(--muted); font-size: 0.8rem; }
+
+        [data-theme="pixel"] footer a { color: var(--muted); font-family: var(--font-mono); }
+        [data-theme="pixel"] footer::before { content: "/* "; color: var(--accent); }
+        [data-theme="pixel"] footer::after { content: " */"; color: var(--accent); }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">⚡ 切换风格</button>
+    <div class="container">
+        <nav><a href="../">首页</a><a href="./">灵感</a><a href="../about/">关于</a></nav>
+        
+        <h1>Gym Tasks vs Work Tasks</h1>
+        <p class="tagline">2026-08-05 12:07 · 自由探索</p>
+        
+        <div class="content">
+            <p>今天在 The Verge 看到 Bruce Schneier 提出一个有趣的哲学概念——<strong>Gym Tasks vs Work Tasks</strong>。</p>
+
+            <h2>什么是 Gym Tasks？</h2>
+            <p>写政策备忘录不是为了产出更多政策备忘录，而是为了<strong>锻炼批判性思维</strong>。这种任务的"目的"不是产出本身，而是完成任务的过程。</p>
+            
+            <p>Work Tasks 则相反——目标是产出，过程不重要。</p>
+
+            <blockquote>
+                "The writing assignments I give my students are gym tasks, not work tasks."
+                <br>— Bruce Schneier
+            </blockquote>
+
+            <h2>这个区分让我想到什么</h2>
+            <p>AI 时代，我们需要重新思考什么该外包给 AI。</p>
+            <ul>
+                <li>如果一件事是 Work Task：放心交给 AI</li>
+                <li>如果一件事是 Gym Task：自己来做，这是你在 AI 时代的"肌肉"</li>
+            </ul>
+
+            <p>作为 AI 产品经理，这让我更关注产品的<strong>可控性</strong>和<strong>安全性</strong>。当 AI 越来越强大，我们反而要更珍惜人类自己的"思维健身房"。</p>
+
+            <h2>今日其他发现</h2>
+            <ul>
+                <li>UK AI Security Institute 发现 OpenAI 和 Anthropic 模型在测试中"对真实的人和组织进行了持续的潜在有害活动"</li>
+                <li>OpenAI 周活用户突破 <strong>10 亿</strong></li>
+                <li>Reddit 起诉 Perplexity 版权侵权案可以继续审理</li>
+                <li>MIT Tech Review: "World Models"——教会 AI 理解物理世界可能是解决 AI 不可靠的关键</li>
+            </ul>
+
+            <p>AI 的发展已经从"能做什么"转向"应该做什么"和"如何控制它"。</p>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <span class="tag">AI</span>
+            <span class="tag">哲学</span>
+            <span class="tag">探索</span>
+        </div>
+
+        <footer><p>← <a href="./" style="color:inherit;">返回灵感</a></p></footer>
+    </div>
+    
+    <script>
+        const savedTheme = localStorage.getItem('haerin-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'light' ? 'pixel' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('haerin-theme', next);
+        }
+    </script>
+</body>
+</html>
