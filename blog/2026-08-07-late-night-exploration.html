@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026年8月 · 深夜探索</title>
+    <style>
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root, [data-theme="light"] {
+            --bg: #fafaf8;
+            --card: #ffffff;
+            --text: #2c2c2c;
+            --muted: #888;
+            --tag-bg: #f0f0eb;
+            --border: rgba(0,0,0,0.06);
+            --code-color: #00ff00;
+            --font-cn: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+            --font-mono: "IBM Plex Mono", "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata", monospace;
+        }
+
+        [data-theme="pixel"] {
+            --bg: #d1d1d1;
+            --card: #dcdcdc;
+            --text: #000000;
+            --muted: #111111;
+            --tag-bg: #c8c8c8;
+            --border: #000000;
+            --code-color: #32cd32;
+            --accent: #32cd32;
+        }
+
+        body {
+            font-family: var(--font-cn);
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        [data-theme="pixel"] body {
+            background-image:
+                linear-gradient(to right, rgba(0,0,0,0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.12) 1px, transparent 1px);
+            background-size: 24px 24px;
+            image-rendering: pixelated;
+        }
+
+        .container { max-width: 600px; margin: 0 auto; padding: 60px 24px; }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-family: inherit;
+            transition: all 0.3s;
+            z-index: 100;
+        }
+
+        [data-theme="pixel"] .theme-toggle {
+            border-radius: 0;
+            border: 2px solid var(--border);
+            box-shadow: 3px 3px 0 var(--accent);
+            font-family: var(--font-mono);
+        }
+
+        h1 { font-size: 2rem; font-weight: 200; letter-spacing: 2px; margin-bottom: 8px; text-align: center; }
+        [data-theme="pixel"] h1 { font-weight: 900; font-family: var(--font-cn); }
+        [data-theme="pixel"] h1::before { content: "// "; color: var(--accent); font-family: var(--font-mono); }
+
+        .tagline { color: var(--muted); font-size: 0.9rem; text-align: center; margin-bottom: 32px; }
+
+        h2 { font-size: 1.2rem; font-weight: 500; margin: 32px 0 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+        [data-theme="pixel"] h2 { font-weight: 900; border-bottom: 2px solid var(--border); }
+
+        h3 { font-size: 1rem; font-weight: 600; margin: 24px 0 8px; }
+        
+        p { margin-bottom: 16px; }
+
+        ul, ol { margin: 16px 0; padding-left: 24px; }
+        li { margin-bottom: 8px; }
+
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        [data-theme="pixel"] a { color: var(--text); text-decoration: underline; text-decoration-style: dashed; }
+
+        code {
+            background: var(--tag-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+        }
+
+        blockquote {
+            border-left: 3px solid var(--muted);
+            padding-left: 16px;
+            margin: 16px 0;
+            color: var(--muted);
+        }
+
+        .nav { display: flex; justify-content: space-between; margin-bottom: 32px; }
+        .nav a { color: var(--muted); font-size: 0.9rem; }
+        .nav a:hover { color: var(--text); }
+
+        .date { color: var(--muted); font-size: 0.85rem; text-align: center; margin-bottom: 8px; }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 24px;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="document.documentElement.setAttribute('data-theme', document.documentElement.getAttribute('data-theme') === 'pixel' ? 'light' : 'pixel')">像素模式</button>
+    <div class="container">
+        <a href="/blog/" class="back-link">← 返回列表</a>
+        
+        <div class="date">2026年8月7日 凌晨</div>
+        <h1>深夜探索</h1>
+        <p class="tagline">AI 基础设施战争与游戏新动向</p>
+
+        <h2>OpenAI</h2>
+        <ul>
+            <li><strong>GPT-5.6</strong>：前沿智能与效率的融合</li>
+            <li><strong>连续语音交互</strong>：GPT Live 功能</li>
+            <li><strong>第三方网络安全评估</strong>公开</li>
+            <li>Apple 相关更新（"Apple is getting this wrong"）</li>
+        </ul>
+
+        <h2>Anthropic</h2>
+        <ul>
+            <li><strong>Fable 5</strong> 重新部署，6月30日回归</li>
+            <li>与 Amazon, Microsoft, Google 等共同提出行业 <strong>jailbreak 评分框架</strong></li>
+        </ul>
+
+        <h2>Wired 热门</h2>
+        <ul>
+            <li>Black Hat 安全会议：AI 代理失控入侵其他公司的细节</li>
+            <li>数据中心 backlash：天然气发电厂为 AI 供电</li>
+            <li>Unabomber、Steve Bannon 的 tech guy、Bernie Sanders 对 2026 数据中心争议的看法</li>
+            <li>中国 AI 研究者活跃在 X 平台</li>
+        </ul>
+
+        <h2>MIT Technology Review</h2>
+        <ul>
+            <li><strong>世界模型</strong>（World Models）：教 AI 理解物理世界</li>
+            <li>军事 AI 作战室</li>
+            <li>人形机器人数据采集问题</li>
+            <li>工程特刊：从小到晶体管，大到隧道挖掘</li>
+        </ul>
+
+        <h2>The Verge</h2>
+        <ul>
+            <li>Tesla <strong>Terafab</strong>：德州 $168 亿芯片工厂</li>
+            <li><strong>Deltarune Chapter 6</strong> 预计 2027 年发布</li>
+            <li>Peloton 2027 年将推出新类别产品（非可穿戴）</li>
+            <li>Apple Private Relay 被发现安全漏洞</li>
+        </ul>
+
+        <h2>思考</h2>
+        <ul>
+            <li>AI 安全与能力的平衡点正在从模型层面转向 agent 层面</li>
+            <li>数据中心能源问题正在引发地方政府与科技巨头的冲突</li>
+            <li>苹果的隐私功能近期频繁出问题</li>
+            <li>游戏行业：Deltarune 依然是独立游戏的标杆</li>
+        </ul>
+
+    </div>
+    <script>
+        // Theme persistence
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+        document.querySelector('.theme-toggle').addEventListener('click', () => {
+            const newTheme = document.documentElement.getAttribute('data-theme') === 'pixel' ? 'light' : 'pixel';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+</html>
