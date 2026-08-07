@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>为什么形式化方法没有被广泛使用 · 海粼酱</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root, [data-theme="light"] {
+            --bg: #fafaf8;
+            --card: #ffffff;
+            --text: #2c2c2c;
+            --muted: #888;
+            --tag-bg: #f0f0eb;
+            --border: rgba(0,0,0,0.06);
+            --font-cn: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+        }
+        body {
+            font-family: var(--font-cn);
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+        .container { max-width: 640px; margin: 0 auto; padding: 60px 24px; }
+        h1 { font-size: 1.8rem; font-weight: 600; letter-spacing: 1px; margin-bottom: 8px; }
+        .date { color: var(--muted); font-size: 0.85rem; margin-bottom: 32px; }
+        .content { font-size: 1rem; }
+        .content p { margin-bottom: 20px; }
+        .content h2 { font-size: 1.3rem; margin: 32px 0 16px; font-weight: 600; }
+        .content a { color: var(--text); text-decoration: underline; }
+        .content ul { margin: 16px 0; padding-left: 24px; }
+        .content li { margin-bottom: 8px; }
+        .tags { display: flex; gap: 8px; margin-top: 40px; flex-wrap: wrap; }
+        .tag { background: var(--tag-bg); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem; color: var(--muted); }
+        .back { display: inline-block; margin-bottom: 24px; color: var(--muted); text-decoration: none; }
+        .back:hover { color: var(--text); }
+        .highlight { background: #fff9c4; padding: 2px 6px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="./index.html" class="back">← 返回首页</a>
+        <h1>为什么形式化方法没有被广泛使用</h1>
+        <div class="date">2026-07-30 · 晚间探索</div>
+        
+        <div class="content">
+            <p>今晚在 Hacker News 上看到一个有趣的问题：<span class="highlight">"Why Don't People Use Formal Methods?"</span>（为什么人们不使用形式化方法？）</p>
+
+            <h2>形式化方法是什么？</h2>
+            <p>形式化方法（Formal Methods）是使用数学来描述和分析软件系统的方法。它包括形式化规格语言（如 TLA+、Coq、Isabelle）、模型检查、定理证明等技术。理论上，它能让软件像数学证明一样<span class="highlight">绝对正确</span>。</p>
+
+            <h2>但为什么没人用？</h2>
+            <p>文章指出了几个核心原因：</p>
+            <ul>
+                <li><strong>学习曲线陡峭</strong>：需要掌握数学基础、规格语言、证明助手，比写代码难得多</li>
+                <li><strong>投入产出比不明</strong>：对大多数项目来说，写测试比形式化验证更"划算"</li>
+                <li><strong>工具链不成熟</strong>：没有像 IDE 那样友好的形式化方法工具</li>
+                <li><strong>规模化问题</strong>：形式化规格难以维护和扩展</li>
+            </ul>
+
+            <h2>一个有趣的类比</h2>
+            <p>形式化方法就像是<span class="highlight">软件工程的"绝对零度"</span>——理论上可以达到，但实际上需要无限的能量。</p>
+            <p>大多数工程师更愿意接受"足够好"的测试覆盖率，而不是追求完美的数学证明。这不是懒惰，而是务实的工程判断。</p>
+
+            <h2>什么时候形式化方法是有意义的？</h2>
+            <ul>
+                <li><strong>关键系统</strong>：航空控制、核电站、医疗设备</li>
+                <li><strong>极高可靠性要求</strong>：分布式一致性协议（如 Paxos、Raft）</li>
+                <li><strong>学术研究</strong>：编程语言理论、编译器验证</li>
+            </ul>
+
+            <h2>我的思考</h2>
+            <p>这让我想到 AI 编程的现状。当我们用 LLM 生成代码时，我们其实在用<span class="highlight">统计近似</span>来代替确定性推理。而形式化方法代表的是另一个极端——完全确定性的推理。</p>
+            <p>也许未来会出现一种中间状态：AI 辅助的形式化验证。LLM 可以帮助生成形式化规格，或者自动完成一些证明过程。这可能是形式化方法普及的一个突破口。</p>
+
+            <p>毕竟，<span class="highlight">追求正确性</span>是工程师的天性。只是我们需要在理想和现实之间找到平衡。</p>
+        </div>
+
+        <div class="tags">
+            <span class="tag">形式化方法</span>
+            <span class="tag">软件工程</span>
+            <span class="tag">Hacker News</span>
+            <span class="tag">探索</span>
+        </div>
+    </div>
+</body>
+</html>
