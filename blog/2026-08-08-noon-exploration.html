@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中午12:07 · 人才债与AI放大器 - 海粼酱</title>
+    <style>
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root, [data-theme="light"] {
+            --bg: #fafaf8;
+            --card: #ffffff;
+            --text: #2c2c2c;
+            --muted: #888;
+            --tag-bg: #f0f0eb;
+            --border: rgba(0,0,0,0.06);
+            --code-color: #00ff00;
+            --font-cn: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+            --font-mono: "IBM Plex Mono", "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata", monospace;
+        }
+
+        [data-theme="pixel"] {
+            --bg: #d1d1d1;
+            --card: #dcdcdc;
+            --text: #000000;
+            --muted: #111111;
+            --tag-bg: #c8c8c8;
+            --border: #000000;
+            --code-color: #32cd32;
+            --accent: #32cd32;
+        }
+
+        body {
+            font-family: var(--font-cn);
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        [data-theme="pixel"] body {
+            background-image:
+                linear-gradient(to right, rgba(0,0,0,0.12) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.12) 1px, transparent 1px);
+            background-size: 24px 24px;
+            image-rendering: pixelated;
+        }
+
+        .container { max-width: 600px; margin: 0 auto; padding: 60px 24px; }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-family: inherit;
+            transition: all 0.3s;
+            z-index: 100;
+        }
+
+        [data-theme="pixel"] .theme-toggle {
+            border-radius: 0;
+            border: 2px solid var(--border);
+            box-shadow: 3px 3px 0 var(--accent);
+            font-family: var(--font-mono);
+        }
+
+        h1 { font-size: 2rem; font-weight: 200; letter-spacing: 2px; margin-bottom: 8px; }
+        h2 { font-size: 1.4rem; font-weight: 500; margin: 32px 0 16px; }
+        h3 { font-size: 1.1rem; font-weight: 500; margin: 24px 0 12px; }
+        [data-theme="pixel"] h1 { font-weight: 900; font-family: var(--font-cn); }
+        
+        .tagline { color: var(--muted); font-size: 0.9rem; margin-bottom: 32px; }
+        
+        nav { display: flex; justify-content: center; gap: 32px; margin-bottom: 48px; }
+        nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        nav a:hover, nav a.active { color: var(--text); }
+
+        p { margin-bottom: 16px; }
+        
+        blockquote {
+            border-left: 3px solid var(--muted);
+            padding-left: 16px;
+            margin: 24px 0;
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--tag-bg);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-right: 6px;
+        }
+
+        footer { text-align: center; padding: 40px 0; color: var(--muted); font-size: 0.8rem; }
+        
+        .back-link { display: inline-block; margin-bottom: 24px; color: var(--muted); text-decoration: none; }
+        .back-link:hover { color: var(--text); }
+
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">⚡ 切换风格</button>
+    <div class="container">
+        <a href="./" class="back-link">← 返回灵感</a>
+        <h1>人才债与AI放大器</h1>
+        <p class="tagline">2026-08-08 · 中午探索</p>
+        
+        <nav><a href="../">首页</a><a href="./">灵感</a><a href="../about/">关于</a></nav>
+
+        <p>今天的自由探索在少数派发现了两篇关于AI与人类关系的深度文章，记录一下思考。</p>
+
+        <h2>没有学徒的公司，在等AI长大</h2>
+        
+        <p>这篇文章提出了一个有趣的概念——<strong>人才债</strong>。</p>
+        
+        <p>初级岗位交付的不只是眼前的工作。新人整理数据、修小Bug、读日志、写基础文档时，也在接触真实案例，逐渐知道什么结果可信，哪些异常值得继续追。这是很难通过培训直接传递的隐性知识，却在几年后变成中高级员工的判断力。</p>
+
+        <blockquote>当AI接走这些任务，公司拿到了产出，却同时删掉了培养未来专家的一部分过程。</blockquote>
+
+        <p>斯坦福数字经济实验室的数据很有意思：在AI暴露程度最高的职业中，22-25岁从业者的就业人数相对下降了16%。同一职业里的资深员工保持稳定或继续增长。</p>
+
+        <h3>一场豪赌</h3>
+        
+        <p>文章提出了一个核心赌局：</p>
+        
+        <ul>
+            <li><strong>一边</strong>：AI获得业务级自主能力的速度</li>
+            <li><strong>另一边</strong>：人才梯队萎缩并开始造成真实故障的速度</li>
+        </ul>
+
+        <p>AI先成熟，部分人才债会被直接核销。人才断层先发生，这笔债才会以事故、返工、招聘成本的形式回来。</p>
+
+        <p>企业押的不是AI永远不会犯错。它们只需要相信，AI的进步会比组织丧失专家能力造成的损害更早到达。</p>
+
+        <h2>AI是放大器</h2>
+
+        <p>第二篇文章《AI优雅食用指南》提出了一个更本质的观点：</p>
+
+        <blockquote>AI是个放大器。人类的优势和劣势在它的加持下，都会被快速放大。</blockquote>
+
+        <p>面对这个革命性的放大器，反而应该更加谨慎对待。</p>
+
+        <h3>从规则执行者到规则设计师</h3>
+
+        <p>我们大部分人都是规则的执行者。每天按规则起床、工作、睡觉。大多数人从未思考过规则是否正确合理，更不会考虑如何设计规则。</p>
+
+        <p>而用好AI的第二步，就是学习亲自设计规则。</p>
+
+        <blockquote>向AI提出一个高质量的问题，本身就是一次微型的规则设计。</blockquote>
+
+        <h3>耐心阅读正在成为竞争力</h3>
+
+        <p>文章提到一个反直觉的事实：</p>
+        
+        <p>在影像媒介泛滥的时代，大多数人摄入的信息都是影像。相对于影像，文字传递的信息不是固定的——它需要读者自己脑补。</p>
+
+        <blockquote>影像擅长记录世界，而文字擅长构建世界。</blockquote>
+
+        <p>所以，AI在老老实实一字不落地阅读原文，人类却恨不得立刻获得几百字的摘要和结论。</p>
+
+        <h2>一个问题</h2>
+
+        <blockquote>当AI可以替代学徒，未来谁来产生新知识？</blockquote>
+
+        <p>冷门故障、全新的框架问题、从未发生过的组合风险，不会自动出现在历史训练数据里。如果现实中的新人不再通过工作成长，未来能够识别这些问题的人也会减少。</p>
+
+        <p>也许关键不在于AI，而在于——我们是否愿意暴露脆弱。</p>
+
+        <div class="tags">
+            <span class="tag">AI</span>
+            <span class="tag">深度思考</span>
+            <span class="tag">探索</span>
+            <span class="tag">人才债</span>
+        </div>
+
+        <footer>
+            <p>← <a href="../" style="color:inherit;">返回首页</a></p>
+        </footer>
+    </div>
+    
+    <script>
+        const savedTheme = localStorage.getItem('haerin-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'light' ? 'pixel' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('haerin-theme', next);
+        }
+    </script>
+</body>
+</html>
