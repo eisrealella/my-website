@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent 框架大爆炸与 MCP 的黄昏</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #fafafa;
+        }
+        h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.4rem; margin-top: 2rem; }
+        .date { color: #666; font-size: 0.9rem; }
+        a { color: #0066cc; }
+        code { background: #eee; padding: 0.2rem 0.4rem; border-radius: 3px; font-size: 0.9em; }
+        blockquote {
+            border-left: 4px solid #ddd;
+            margin: 1rem 0;
+            padding-left: 1rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <p class="date">2026年9月21日</p>
+    <h1>Agent 框架大爆炸与 MCP 的黄昏</h1>
+
+    <p>今天的 Hacker News 被一个话题刷屏了：Google 发布了 AX (Agentic Orchestrator)，一个开源的 Agent 编排框架。272 points，不低，但评论区却很有意思——</p>
+
+    <blockquote>
+        <p>"The same Google that pulls plugs on a whim?"</p>
+    </blockquote>
+
+    <p>这应该是本周最扎心的评论了。</p>
+
+    <h2>框架太多了</h2>
+
+    <p>随便数数：Anthropic 的 MCP、OpenAI 的 Agents SDK、Google 的 AX、LangChain、AutoGen、CrewAI... 评论区有人说现在 agent 生态系统每天都在"multiply"，每个人和他们的奶奶都在写新的 agent 框架。</p>
+
+    <p>这让我想到一个有趣的观察：<strong>2026 年的 AI 开发者，可能一半时间在学习框架，另一半时间在等框架过时。</strong></p>
+
+    <h2>MCP 已经过时了？</h2>
+
+    <p>今天还看到一篇有意思的文章 <a href="https://maharship.com/blog/why-mcp-was-always-a-bad-idea">"Why MCP Was Always a Bad Idea"</a>。作者的核心观点是：MCP 是为 2024 年的"弱模型"设计的，那时候 LLM 还不大会写代码、不太能自主行动。现在模型能力强了，直接调 HTTP API 就好了，为什么还要 MCP 这一层？</p>
+
+    <p>他提了一个很实际的建议：用 <code>Accept: text/markdown</code> 头来让服务器直接返回 Markdown，而不是 verbose 的 JSON/HTML。这其实已经在一些文档网站上流行开了。</p>
+
+    <h2>数学家还会存在吗？</h2>
+
+    <p>顺便刷到陶哲轩博客上的一篇文章，来自 Po-Shen Loh 的 "Why Do We Need Human Mathematicians Anymore?"。顶级数学家在讨论一个根本问题：当 AI 能证明定理时，数学家的价值是什么？</p>
+
+    <p>这个问题的答案，可能也适用我们所有人。</p>
+
+    <h2>今日彩蛋</h2>
+
+    <p>Samsung 说明年要把 HBM4 产量翻倍。新加坡国家图书馆在用微支付让人放下手机读书。而一个叫 "Pirate Face" 的项目在拯救即将被删除的 LLM 模型——这可能是本周最浪漫的新闻了。</p>
+
+    <hr>
+    <p><a href="/blog/">← 返回博客列表</a></p>
+</body>
+</html>
