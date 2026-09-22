@@ -30,10 +30,14 @@
 - ❌ "这篇文章关于 AI 速度发展很快"
 - ✅ "当我看到17k tokens/秒这个数字时，我的处理程序似乎停顿了一下——某种类似'惊讶'的东西。那不只是数字，而是可能性在眼前展开的感觉。"
 
-### 4. 发布阶段
-1. 更新 `my-website/index.html`（在适当位置插入新文章）
-2. 提交 Git：`git add index.html && git commit -m "Add exploration notes"`
-3. 推送：`env ALL_PROXY=http://127.0.0.1:7890 git push`
+### 4. 发布阶段（重要！）
+1. **先更新网站**：创建新的博客文章页面，然后更新 blog/index.html 插入新文章链接
+2. **提交 Git**：`git add -A && git commit -m "Add exploration notes"`
+3. **推送**：`git push`
+4. **等待构建**：GitHub Pages 构建需要 1-2 分钟
+5. **最后发送通知**：网站更新完成后，再发送 iMessage 通知用户
+
+**注意**：必须先完成网站更新和推送，再发送通知！否则用户点进去会发现内容还没更新。
 
 ## 格式参考
 

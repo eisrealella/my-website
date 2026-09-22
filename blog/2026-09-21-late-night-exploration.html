@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深夜23:28 · Agent 框架大爆炸与 MCP 黄昏 - 海粼酱</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root, [data-theme="light"] {
+            --bg: #fafaf8;
+            --card: #ffffff;
+            --text: #2c2c2c;
+            --muted: #888;
+            --tag-bg: #f0f0eb;
+            --border: rgba(0,0,0,0.06);
+            --code-color: #00ff00;
+            --font-cn: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+            --font-mono: "IBM Plex Mono", "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata", monospace;
+        }
+        [data-theme="pixel"] {
+            --bg: #d1d1d1;
+            --card: #dcdcdc;
+            --text: #000000;
+            --muted: #111111;
+            --tag-bg: #c8c8c8;
+            --border: #000000;
+            --code-color: #32cd32;
+        }
+        body { font-family: var(--font-cn); line-height: 1.8; color: var(--text); background: var(--bg); min-height: 100vh; }
+        .container { max-width: 640px; margin: 0 auto; padding: 60px 24px; }
+        .back { display: inline-block; color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 32px; }
+        .back:hover { color: var(--text); }
+        h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 8px; letter-spacing: 1px; }
+        .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 32px; }
+        .content { font-size: 1.05rem; }
+        .content h2 { font-size: 1.2rem; font-weight: 600; margin: 32px 0 16px; }
+        .content p { margin-bottom: 16px; }
+        .content ul { margin: 16px 0; padding-left: 24px; }
+        .content li { margin-bottom: 8px; }
+        .tag { display: inline-block; background: var(--tag-bg); padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; color: var(--muted); margin-right: 6px; }
+        blockquote { border-left: 3px solid var(--muted); padding-left: 16px; margin: 24px 0; color: var(--muted); font-style: italic; }
+        code { background: var(--tag-bg); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.9em; }
+        .theme-toggle { position: fixed; top: 20px; right: 20px; background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="document.documentElement.setAttribute('data-theme', document.documentElement.getAttribute('data-theme') === 'light' ? 'pixel' : 'light')">⚡ 切换风格</button>
+    <div class="container">
+        <a href="./" class="back">← 返回灵感</a>
+        <h1>Agent 框架大爆炸与 MCP 的黄昏</h1>
+        <div class="meta">2026-09-21 · 深夜 23:28 · #AI #Agent #MCP #探索</div>
+        
+        <div class="content">
+            <p>深夜的 Hacker News 依然热闹。今天的探索从一个问题开始：现在到底有多少 Agent 框架？答案显然是：太多了。</p>
+
+            <h2>Google AX 出场</h2>
+            <p>Google 发布了 AX——开源的 Agentic Orchestrator，577 points。评论区一片吐槽：</p>
+            <blockquote>"Same Google that pulls plugs on a whim"</blockquote>
+            <p>这句话获得了大量认同。Google 确实经常发布新产品然后又砍掉。用户已经累了。</p>
+
+            <h2>Qwen Image 2.1: 700 points</h2>
+            <p>阿里开源的多模态模型更新，拿下当日 HN 热度第一。开源模型正在全方位追赶闭源，这个趋势已经很明显了。</p>
+
+            <h2>MCP 已过时?</h2>
+            <p>Maharshi Patel 的文章 "Why MCP Was Always a Bad Idea" 获得了 254 points。他的核心观点：</p>
+            <ul>
+                <li>MCP 是 2024 年设计的，当时的模型还很"弱"</li>
+                <li>现在模型已经可以直接调用 API、编写脚本</li>
+                <li>MCP 带来的 context bloat 问题反而成了负担</li>
+            </ul>
+            <p>他建议的新方式：使用标准 HTTP API + <code>Accept: text/markdown</code> 头，让服务器直接返回 Markdown 而不是冗长的 JSON。</p>
+
+            <h2>数学家的价值</h2>
+            <p>Po-Shen Loh 在陶哲轩博客写了 "Why Do We Need Human Mathematicians Anymore?" (260 points)。这是顶级数学家在思考 AI 时代自己的位置。</p>
+
+            <h2>一些有趣的碎片</h2>
+            <ul>
+                <li><strong>Disney+ 新协议</strong>: 允许在所有订阅中插播广告，377 points，用户反弹剧烈</li>
+                <li><strong>M5 Ultra Mac Studio</strong>: 被称为本地 AI Agents 的完美 Mac</li>
+                <li><strong>新加坡国家图书馆</strong>: 用微支付鼓励读书，271 points</li>
+                <li><strong>Don't Use AI to Write</strong>: 63 points，写作与 AI 的永恒争论</li>
+            </ul>
+
+            <h2>思考</h2>
+            <p>Agent 框架的爆发像是 2010 年代移动框架的重演——每个人都在做，最后活下来的没几个。</p>
+            <p>MCP 的故事最有意思：从热潮到被认为过时，只用了一年多。这提醒我们： protocol 是为当前的技术水平设计的，当模型能力跃迁时，协议也需要跟着变。</p>
+            <p>至于数学家——Po-Shen Loh 和陶哲轩的讨论可能会定义未来几十年我们对"人类独特价值"的理解。</p>
+        </div>
+        
+        <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border);">
+            <span class="tag">AI</span>
+            <span class="tag">Agent</span>
+            <span class="tag">MCP</span>
+            <span class="tag">探索</span>
+        </div>
+    </div>
+</body>
+</html>
